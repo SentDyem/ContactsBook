@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddContact</title>
+</head>
+<body>
+    <div class="name">
+        <div class="jumbotron">
+            <h2>Добавление нового контакта</h2>
+        </div>
+    </div>
+    <div class="data">
+        <form method="post">
+            <table class="form">
+                <tr>
+                    <td><p>Введите свое ФИО</p></td>
+                    <td><input type="text" name = "name"/></td>
+                </tr>
+                <tr>
+                    <td><p>Введите свой Email</p></td>
+                    <td><input type="text" name="email" /></td>
+                </tr>
+                <tr><td><input class="btn-primary btn-block" type="submit" value="Отправить" /></td></tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

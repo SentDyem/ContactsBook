@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Book.Models.Contact>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Contacts</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Создать новый контакт", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Изменить данные", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+                <p><a href="/Home/Delete" class="btn btn-warning btn-sm">Удалить &raquo;</a></p>
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
