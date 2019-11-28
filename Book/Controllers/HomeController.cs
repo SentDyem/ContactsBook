@@ -1,4 +1,5 @@
-﻿using Book.Models;
+﻿using Book.Hubs;
+using Book.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,9 +41,41 @@ namespace Book.Controllers
         {
             db.Contacts.Add(contact);
             db.SaveChanges();
+           SendMessage("Добавлен новый контакт!");
             return RedirectToAction("Contacts");
         }
-        
-    
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            Contact b = db.Contacts.Find(id);
+            if (b == null)
+            {
+                return HttpNotFound();
+            }
+            return View(b);
+        }
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Contact b = db.Contacts.Find(id);
+
+            db.Contacts.Remove(b);
+            db.SaveChanges();
+            return RedirectToAction("Contacts");
+        }
+        protected override void Dispose(bool disposing)
+        {
+            db.Dispose();
+            base.Dispose(disposing);
+        }
+        private void SendMessage(string message)
+        {
+            // Получаем контекст хаба
+            var context =
+                Microsoft.AspNet.SignalR.GlobalHost.ConnectionManager.GetHubContext<NotificationHub>();
+            // отправляем сообщение
+            context.Clients.All.displayMessage(message);
+        }
+
     }
 }

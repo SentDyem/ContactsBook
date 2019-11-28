@@ -12,9 +12,6 @@
     <title>Contacts</title>
 </head>
 <body>
-    <p>
-        @Html.ActionLink("Создать новый контакт", "Create")
-    </p>
     <table class="table">
         <tr>
             <th>
@@ -25,23 +22,41 @@
             </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.ActionLink("Изменить данные", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
-                <p><a href="/Home/Delete" class="btn btn-warning btn-sm">Удалить &raquo;</a></p>
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
     </table>
+    <div class="dropdown text-center">
+        <p><a href="/Home/Create" class="btn btn-primary">Новый контакт &raquo;</a></p>
+    </div>
+    @*<div class="text-center">
+        @helper ContactList(IEnumerable<Book.Models.Contact> contacts)
+        {
+            <ul>
+                @foreach (Book.Models.Contact b in contacts)
+                {
+                    <li>@b.Name</li>
+                }
+
+            </ul>
+        }
+        <h2>Список имен контактов</h2>
+        @ContactList(Model)
+    </div>*@
 </body>
 </html>
+
+

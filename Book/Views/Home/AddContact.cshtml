@@ -21,7 +21,7 @@
             <table class="form">
                 <tr>
                     <td><p>Введите свое ФИО</p></td>
-                    <td><input type="text" name = "name"/></td>
+                    <td><input type="text" name="name" /></td>
                 </tr>
                 <tr>
                     <td><p>Введите свой Email</p></td>
@@ -34,3 +34,22 @@
 
 </body>
 </html>
+@section scripts{
+    <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <!--Ссылка на автоматически сгенерированный скрипт хаба SignalR -->
+    <script src="~/signalr/hubs"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var notificationhub = $.connection.notificationHub;
+
+            notificationhub.client.displayMessage = function (message) {
+
+                $('#notification').html(message);
+            };
+
+            $.connection.hub.start();
+
+        });
+    </script>
+}
