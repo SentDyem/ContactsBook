@@ -1,27 +1,54 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model IEnumerable<Book.Models.Contact>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>НАЙДИ РАБОТНИКА 1.0</h1>
-    <p class="lead">Сайт, предназначенный для работы с адресной книгой.</p>
-    <p><a href="https://github.com/sentdyem" class="btn btn-success btn-lg">GitHub разработчика &raquo;</a></p>
-</div>
+<!DOCTYPE html>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Удобство использования</h2>
-        <p>
-            Упрощенный функционал позволяет быстро добавлять новых контактов.
-        </p>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Contacts</title>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <div class="dropdown text-center">
+        <p><a href="/Home/Create" class="btn btn-primary">Новый контакт &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Используемые технологии</h2>
-        <p>Для обеспечения работы сайта используется бесплатный Framework - ASP.NET.</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Баги разработки</h2>
-        <p>Отсутствие функционала кнопок "Изменить", "Удалить".</p>
-            
-    </div>
-</div>
+</body>
+</html>
+
+

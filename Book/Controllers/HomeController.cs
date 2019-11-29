@@ -13,7 +13,7 @@ namespace Book.Controllers
         ContactContext db = new ContactContext();
         public ActionResult Index()
         {
-            return View();
+            return View(db.Contacts);
         }
 
         public ActionResult About()
@@ -39,10 +39,13 @@ namespace Book.Controllers
         [HttpPost]
         public ActionResult Create(Contact contact)
         {
-            db.Contacts.Add(contact);
-            db.SaveChanges();
-           SendMessage("Добавлен новый контакт!");
-            return RedirectToAction("Contacts");
+            if (ModelState.IsValid)
+            {
+                db.Contacts.Add(contact);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
         }
         [HttpGet]
         public ActionResult Delete(int id)
@@ -61,20 +64,12 @@ namespace Book.Controllers
 
             db.Contacts.Remove(b);
             db.SaveChanges();
-            return RedirectToAction("Contacts");
+            return RedirectToAction("Index");
         }
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
             base.Dispose(disposing);
-        }
-        private void SendMessage(string message)
-        {
-            // Получаем контекст хаба
-            var context =
-                Microsoft.AspNet.SignalR.GlobalHost.ConnectionManager.GetHubContext<NotificationHub>();
-            // отправляем сообщение
-            context.Clients.All.displayMessage(message);
         }
 
     }

@@ -198,11 +198,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\AddContact.cshtml" />
-    <Content Include="Views\Home\Contacts%28backup%29.cshtml" />
     <Content Include="Views\Home\Contacts.cshtml" />
-    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\Create%28backup%29.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Home\Delete.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
