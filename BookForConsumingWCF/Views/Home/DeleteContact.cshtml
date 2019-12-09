@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Удаление контакта";
+}
+
+<h2>Удаление контакта</h2>
+<form method="post" action="@Url.Action("DeleteContact")">
+    Введите ID удаляемого контакта:<input type="text" name="Id" />
+    <input type="submit" value="Удалить контакт" />
+</form>
+

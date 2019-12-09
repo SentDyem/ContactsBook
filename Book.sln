@@ -4,10 +4,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28307.779
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Book", "Book\Book.csproj", "{4EDCA792-7C1E-4821-84C5-B42EDBB14084}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9DE6D358-1043-4B0B-A2EC-AC8FDC9E7B8E} = {9DE6D358-1043-4B0B-A2EC-AC8FDC9E7B8E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authentication", "Authentication\Authentication.csproj", "{6107EDED-79D0-4C03-8CF8-2FEFB01823BE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticationSite", "AuthenticationSite\AuthenticationSite.csproj", "{A04A91D5-175C-4E0F-A672-2FDA7AAB1840}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookWcfService", "BookWcfService\BookWcfService.csproj", "{9DE6D358-1043-4B0B-A2EC-AC8FDC9E7B8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookForConsumingWCF", "BookForConsumingWCF\BookForConsumingWCF.csproj", "{73E9431E-A6C2-492D-83C1-13F11F6BC068}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9DE6D358-1043-4B0B-A2EC-AC8FDC9E7B8E} = {9DE6D358-1043-4B0B-A2EC-AC8FDC9E7B8E}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +37,14 @@ Global
 		{A04A91D5-175C-4E0F-A672-2FDA7AAB1840}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A04A91D5-175C-4E0F-A672-2FDA7AAB1840}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A04A91D5-175C-4E0F-A672-2FDA7AAB1840}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DE6D358-1043-4B0B-A2EC-AC8FDC9E7B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DE6D358-1043-4B0B-A2EC-AC8FDC9E7B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DE6D358-1043-4B0B-A2EC-AC8FDC9E7B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DE6D358-1043-4B0B-A2EC-AC8FDC9E7B8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73E9431E-A6C2-492D-83C1-13F11F6BC068}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73E9431E-A6C2-492D-83C1-13F11F6BC068}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73E9431E-A6C2-492D-83C1-13F11F6BC068}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73E9431E-A6C2-492D-83C1-13F11F6BC068}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
