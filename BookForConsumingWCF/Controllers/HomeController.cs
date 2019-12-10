@@ -14,6 +14,7 @@ namespace BookForConsumingWCF.Controllers
             BookServiceClient o = new BookServiceClient();
             List<Contact> li = o.Get().ToList();
             ViewBag.List = li;
+            Response.AddHeader("Refresh", "5");
             return View();
         }
 

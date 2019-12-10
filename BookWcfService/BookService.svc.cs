@@ -33,7 +33,6 @@ namespace BookWcfService
             db.Contacts.Add(cobj);
             db.SaveChanges();
             
-            
         }
 
         public void Update(Contact cobj)
