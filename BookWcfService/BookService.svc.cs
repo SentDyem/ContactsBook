@@ -9,17 +9,17 @@ namespace BookWcfService
 {
     public class BookService : IBookService
     {
-        public void DeleteContact(int Id)
+        public void Delete(int Id)
         {
             ContactContext db = new ContactContext();
-            var c = (from con in db.Contacts
-                     where con.Id == Id
-                     select con).First();
+            var c = (from con in db.Contacts    // определение каждого объекта
+                     where con.Id == Id        // фильтрация по ид
+                     select con).First();      // выбор объекта 
             db.Contacts.Remove(c);
             db.SaveChanges();
         }
 
-        public IEnumerable<Contact> GetContacts()
+        public IEnumerable<Contact> Get()
         {
             List<Contact> list = new List<Contact>();
             ContactContext db = new ContactContext();
@@ -27,15 +27,16 @@ namespace BookWcfService
             return list;
         }
 
-        public void InsertContact(Contact cobj)
+        public void Insert(Contact cobj)
         {
             ContactContext db = new ContactContext();
             db.Contacts.Add(cobj);
             db.SaveChanges();
             
+            
         }
 
-        public void UpdateContact(Contact cobj)
+        public void Update(Contact cobj)
         {
             ContactContext db = new ContactContext();
             var c = (from con in db.Contacts

@@ -12,13 +12,13 @@ namespace BookWcfService
     public interface IBookService
     {
         [OperationContract]
-        IEnumerable<Contact> GetContacts();
+        IEnumerable<Contact> Get();
         [OperationContract]
-        void InsertContact(Contact cobj);
+        void Insert(Contact cobj);
         [OperationContract]
-        void UpdateContact(Contact cobj);
+        void Update(Contact cobj);
         [OperationContract]
-        void DeleteContact(int Id);
+        void Delete(int Id);
     }
     [DataContract]
     public class Contact
@@ -31,6 +31,7 @@ namespace BookWcfService
         public string Name { get; set; }
         [DataMember]
         [Required]
+        [EmailAddress(ErrorMessage = "Введите корректный Email адрес")]
         public string Email { get; set; }
 
     }

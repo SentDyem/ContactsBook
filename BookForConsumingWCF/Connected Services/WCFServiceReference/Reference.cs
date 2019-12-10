@@ -94,29 +94,29 @@ namespace BookForConsumingWCF.WCFServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCFServiceReference.IBookService")]
     public interface IBookService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/GetContacts", ReplyAction="http://tempuri.org/IBookService/GetContactsResponse")]
-        BookForConsumingWCF.WCFServiceReference.Contact[] GetContacts();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/Get", ReplyAction="http://tempuri.org/IBookService/GetResponse")]
+        BookForConsumingWCF.WCFServiceReference.Contact[] Get();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/GetContacts", ReplyAction="http://tempuri.org/IBookService/GetContactsResponse")]
-        System.Threading.Tasks.Task<BookForConsumingWCF.WCFServiceReference.Contact[]> GetContactsAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/Get", ReplyAction="http://tempuri.org/IBookService/GetResponse")]
+        System.Threading.Tasks.Task<BookForConsumingWCF.WCFServiceReference.Contact[]> GetAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/InsertContact", ReplyAction="http://tempuri.org/IBookService/InsertContactResponse")]
-        void InsertContact(BookForConsumingWCF.WCFServiceReference.Contact cobj);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/Insert", ReplyAction="http://tempuri.org/IBookService/InsertResponse")]
+        void Insert(BookForConsumingWCF.WCFServiceReference.Contact cobj);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/InsertContact", ReplyAction="http://tempuri.org/IBookService/InsertContactResponse")]
-        System.Threading.Tasks.Task InsertContactAsync(BookForConsumingWCF.WCFServiceReference.Contact cobj);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/Insert", ReplyAction="http://tempuri.org/IBookService/InsertResponse")]
+        System.Threading.Tasks.Task InsertAsync(BookForConsumingWCF.WCFServiceReference.Contact cobj);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/UpdateContact", ReplyAction="http://tempuri.org/IBookService/UpdateContactResponse")]
-        void UpdateContact(BookForConsumingWCF.WCFServiceReference.Contact cobj);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/Update", ReplyAction="http://tempuri.org/IBookService/UpdateResponse")]
+        void Update(BookForConsumingWCF.WCFServiceReference.Contact cobj);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/UpdateContact", ReplyAction="http://tempuri.org/IBookService/UpdateContactResponse")]
-        System.Threading.Tasks.Task UpdateContactAsync(BookForConsumingWCF.WCFServiceReference.Contact cobj);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/Update", ReplyAction="http://tempuri.org/IBookService/UpdateResponse")]
+        System.Threading.Tasks.Task UpdateAsync(BookForConsumingWCF.WCFServiceReference.Contact cobj);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/DeleteContact", ReplyAction="http://tempuri.org/IBookService/DeleteContactResponse")]
-        void DeleteContact(int Id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/Delete", ReplyAction="http://tempuri.org/IBookService/DeleteResponse")]
+        void Delete(int Id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/DeleteContact", ReplyAction="http://tempuri.org/IBookService/DeleteContactResponse")]
-        System.Threading.Tasks.Task DeleteContactAsync(int Id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/Delete", ReplyAction="http://tempuri.org/IBookService/DeleteResponse")]
+        System.Threading.Tasks.Task DeleteAsync(int Id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -146,36 +146,36 @@ namespace BookForConsumingWCF.WCFServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public BookForConsumingWCF.WCFServiceReference.Contact[] GetContacts() {
-            return base.Channel.GetContacts();
+        public BookForConsumingWCF.WCFServiceReference.Contact[] Get() {
+            return base.Channel.Get();
         }
         
-        public System.Threading.Tasks.Task<BookForConsumingWCF.WCFServiceReference.Contact[]> GetContactsAsync() {
-            return base.Channel.GetContactsAsync();
+        public System.Threading.Tasks.Task<BookForConsumingWCF.WCFServiceReference.Contact[]> GetAsync() {
+            return base.Channel.GetAsync();
         }
         
-        public void InsertContact(BookForConsumingWCF.WCFServiceReference.Contact cobj) {
-            base.Channel.InsertContact(cobj);
+        public void Insert(BookForConsumingWCF.WCFServiceReference.Contact cobj) {
+            base.Channel.Insert(cobj);
         }
         
-        public System.Threading.Tasks.Task InsertContactAsync(BookForConsumingWCF.WCFServiceReference.Contact cobj) {
-            return base.Channel.InsertContactAsync(cobj);
+        public System.Threading.Tasks.Task InsertAsync(BookForConsumingWCF.WCFServiceReference.Contact cobj) {
+            return base.Channel.InsertAsync(cobj);
         }
         
-        public void UpdateContact(BookForConsumingWCF.WCFServiceReference.Contact cobj) {
-            base.Channel.UpdateContact(cobj);
+        public void Update(BookForConsumingWCF.WCFServiceReference.Contact cobj) {
+            base.Channel.Update(cobj);
         }
         
-        public System.Threading.Tasks.Task UpdateContactAsync(BookForConsumingWCF.WCFServiceReference.Contact cobj) {
-            return base.Channel.UpdateContactAsync(cobj);
+        public System.Threading.Tasks.Task UpdateAsync(BookForConsumingWCF.WCFServiceReference.Contact cobj) {
+            return base.Channel.UpdateAsync(cobj);
         }
         
-        public void DeleteContact(int Id) {
-            base.Channel.DeleteContact(Id);
+        public void Delete(int Id) {
+            base.Channel.Delete(Id);
         }
         
-        public System.Threading.Tasks.Task DeleteContactAsync(int Id) {
-            return base.Channel.DeleteContactAsync(Id);
+        public System.Threading.Tasks.Task DeleteAsync(int Id) {
+            return base.Channel.DeleteAsync(Id);
         }
     }
 }

@@ -21,13 +21,13 @@
             <td>@item.Name</td>
             <td>@item.Email</td>
             <td>
-                @Html.ActionLink("Изменить", "UpdateContact", new { id = item.Id })
+                @Html.ActionLink("Изменить", "Update", new { id = item.Id })
             </td>
         </tr>
     }
 
 </table>
 <div class="text-center">
-    <p><a href="/Home/InsertContact" class="btn btn-primary">Новый контакт &raquo;</a> 
-    <a href="/Home/DeleteContact" class="btn btn-danger">Удалить контакт &raquo;</a></p>
+    <p><a href="/Home/Insert" class="btn btn-primary">Новый контакт &raquo;</a> 
+    <a href="/Home/Delete" class="btn btn-danger">Удалить контакт &raquo;</a></p>
 </div>

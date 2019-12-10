@@ -7,52 +7,52 @@
       <xsd:import schemaLocation="http://localhost:27879/BookService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BookWcfService" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IBookService_GetContacts_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetContacts" />
+  <wsdl:message name="IBookService_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get" />
   </wsdl:message>
-  <wsdl:message name="IBookService_GetContacts_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetContactsResponse" />
+  <wsdl:message name="IBookService_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResponse" />
   </wsdl:message>
-  <wsdl:message name="IBookService_InsertContact_InputMessage">
-    <wsdl:part name="parameters" element="tns:InsertContact" />
+  <wsdl:message name="IBookService_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert" />
   </wsdl:message>
-  <wsdl:message name="IBookService_InsertContact_OutputMessage">
-    <wsdl:part name="parameters" element="tns:InsertContactResponse" />
+  <wsdl:message name="IBookService_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertResponse" />
   </wsdl:message>
-  <wsdl:message name="IBookService_UpdateContact_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateContact" />
+  <wsdl:message name="IBookService_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update" />
   </wsdl:message>
-  <wsdl:message name="IBookService_UpdateContact_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateContactResponse" />
+  <wsdl:message name="IBookService_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
   </wsdl:message>
-  <wsdl:message name="IBookService_DeleteContact_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteContact" />
+  <wsdl:message name="IBookService_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
   </wsdl:message>
-  <wsdl:message name="IBookService_DeleteContact_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteContactResponse" />
+  <wsdl:message name="IBookService_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
   </wsdl:message>
   <wsdl:portType name="IBookService">
-    <wsdl:operation name="GetContacts">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBookService/GetContacts" message="tns:IBookService_GetContacts_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBookService/GetContactsResponse" message="tns:IBookService_GetContacts_OutputMessage" />
+    <wsdl:operation name="Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookService/Get" message="tns:IBookService_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookService/GetResponse" message="tns:IBookService_Get_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="InsertContact">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBookService/InsertContact" message="tns:IBookService_InsertContact_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBookService/InsertContactResponse" message="tns:IBookService_InsertContact_OutputMessage" />
+    <wsdl:operation name="Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookService/Insert" message="tns:IBookService_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookService/InsertResponse" message="tns:IBookService_Insert_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="UpdateContact">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBookService/UpdateContact" message="tns:IBookService_UpdateContact_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBookService/UpdateContactResponse" message="tns:IBookService_UpdateContact_OutputMessage" />
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookService/Update" message="tns:IBookService_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookService/UpdateResponse" message="tns:IBookService_Update_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="DeleteContact">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBookService/DeleteContact" message="tns:IBookService_DeleteContact_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBookService/DeleteContactResponse" message="tns:IBookService_DeleteContact_OutputMessage" />
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookService/Delete" message="tns:IBookService_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookService/DeleteResponse" message="tns:IBookService_Delete_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBookService" type="tns:IBookService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetContacts">
-      <soap:operation soapAction="http://tempuri.org/IBookService/GetContacts" style="document" />
+    <wsdl:operation name="Get">
+      <soap:operation soapAction="http://tempuri.org/IBookService/Get" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -60,8 +60,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="InsertContact">
-      <soap:operation soapAction="http://tempuri.org/IBookService/InsertContact" style="document" />
+    <wsdl:operation name="Insert">
+      <soap:operation soapAction="http://tempuri.org/IBookService/Insert" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -69,8 +69,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="UpdateContact">
-      <soap:operation soapAction="http://tempuri.org/IBookService/UpdateContact" style="document" />
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/IBookService/Update" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -78,8 +78,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="DeleteContact">
-      <soap:operation soapAction="http://tempuri.org/IBookService/DeleteContact" style="document" />
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/IBookService/Delete" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

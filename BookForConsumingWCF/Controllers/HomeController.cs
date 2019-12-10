@@ -11,7 +11,10 @@ namespace BookForConsumingWCF.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("GetContacts");
+            BookServiceClient o = new BookServiceClient();
+            List<Contact> li = o.Get().ToList();
+            ViewBag.List = li;
+            return View();
         }
 
         public ActionResult About()
@@ -21,59 +24,52 @@ namespace BookForConsumingWCF.Controllers
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
-        public ActionResult GetContacts(Contact obj)
-        {
-            BookServiceClient o = new BookServiceClient();
-            List<Contact> li = o.GetContacts().ToList();
-            ViewBag.List = li;
-            return View();
-        }
+        //public ActionResult Get()
+        //{
+        //    BookServiceClient o = new BookServiceClient();
+        //    List<Contact> li = o.Get().ToList();
+        //    ViewBag.List = li;
+        //    return View();
+        //}
 
         [HttpGet]
-        public ActionResult InsertContact()
+        public ActionResult Insert()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult InsertContact(Contact obj)
+        public ActionResult Insert(Contact cobj)
         {
             BookServiceClient o = new BookServiceClient();
-            o.InsertContact(obj);
-            return RedirectToAction("GetContacts");
+            o.Insert(cobj);
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public ActionResult UpdateContact()
+        public ActionResult Update()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult UpdateContact(Contact obj)
+        public ActionResult Update(Contact cobj)
         {
             BookServiceClient o = new BookServiceClient();
-            o.UpdateContact(obj);
-            return RedirectToAction("GetContacts");
+            o.Update(cobj);
+            return RedirectToAction("Index");
         }
         [HttpGet]
-        public ActionResult DeleteContact()
+        public ActionResult Delete()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult DeleteContact(int Id)
+        public ActionResult Delete(int Id)
         {
             BookServiceClient o = new BookServiceClient();
-            o.DeleteContact(Id);
-            return RedirectToAction("GetContacts");
+            o.Delete(Id);
+            return RedirectToAction("Index");
         }
 
     }
